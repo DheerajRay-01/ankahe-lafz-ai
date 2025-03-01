@@ -67,27 +67,28 @@ function ChatScreen() {
 
       {/* Chat Input Section */}
       <form
-        onSubmit={handleFetchResponse}
-        className="w-full max-w-2xl flex items-center gap-3 mt-6 bg-gray-700 p-3 rounded-xl shadow-lg border border-gray-600"
-      >
-        <input
-          type="text"
-          className="flex-1 p-3 bg-transparent border border-gray-500 rounded-lg outline-none focus:ring-2 focus:ring-purple-400 placeholder-gray-300 text-lg"
-          onChange={(e) => setPrompt(e.target.value)}
-          value={prompt}
-          placeholder="Transform thoughts into poetry...."
-          aria-label="Prompt input"
-        />
-        <button
-          type="submit"
-          className={`flex items-center justify-center bg-purple-600 text-white px-5 py-2 rounded-lg transition-all ${
-            isLoading ? "opacity-50 cursor-not-allowed" : "hover:bg-purple-500"
-          }`}
-          disabled={isLoading}
-        >
-          {isLoading ? "Shaping Verses." : <Send size={22} />}
-        </button>
-      </form>
+  onSubmit={handleFetchResponse}
+  className="w-full max-w-2xl flex items-center gap-3 mt-6 bg-gray-700 p-3 rounded-xl shadow-lg border border-gray-600"
+>
+  <input
+    type="text"
+    className="flex-1 min-w-0 p-3 bg-transparent border border-gray-500 rounded-lg outline-none focus:ring-2 focus:ring-purple-400 placeholder-gray-300 text-lg"
+    onChange={(e) => setPrompt(e.target.value)}
+    value={prompt}
+    placeholder="Transform thoughts into poetry...."
+    aria-label="Prompt input"
+  />
+  <button
+    type="submit"
+    className={`flex items-center justify-center whitespace-nowrap bg-purple-600 text-white px-5 py-2 rounded-lg transition-all ${
+      isLoading ? "opacity-50 cursor-not-allowed" : "hover:bg-purple-500"
+    }`}
+    disabled={isLoading}
+  >
+    {isLoading ? "Crafting..." : <Send size={22} />}
+  </button>
+</form>
+
     </div>
   );
 }

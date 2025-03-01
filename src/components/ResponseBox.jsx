@@ -44,7 +44,7 @@ function ResponseBox({ res, isGet,setLan,lang }) {
         }}
       />
 
-<div className="absolute top-2 right-2 sm:top-4 sm:right-4 flex flex-col items-center gap-3">
+<div className="absolute top-2 right-1 sm:top-4 sm:right-4 flex flex-col items-center gap-3">
   {/* Copy Button */}
 
   {!isGet && (
