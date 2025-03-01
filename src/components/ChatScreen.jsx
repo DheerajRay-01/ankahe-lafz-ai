@@ -75,7 +75,7 @@ function ChatScreen() {
     className="flex-1 min-w-0 p-3 bg-transparent border border-gray-500 rounded-lg outline-none focus:ring-2 focus:ring-purple-400 placeholder-gray-300 text-lg"
     onChange={(e) => setPrompt(e.target.value)}
     value={prompt}
-    placeholder="Transform thoughts into poetry...."
+    placeholder="Shape your thoughts..."
     aria-label="Prompt input"
   />
   <button
