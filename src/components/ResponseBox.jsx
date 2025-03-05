@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import { addResponse } from "./redux/slices/responseSlice";
 import { MdOutlineBookmarkAdded ,MdOutlineBookmarkAdd} from "react-icons/md";
 import axios from "../axios/axios";
-import { Content } from "../../../backend/src/models/content.model";
 
 function ResponseBox({ res, isGet,setLan,lang }) {
   const dispatch = useDispatch()
