@@ -15,23 +15,26 @@ const dispatch = useDispatch()
 const currentUser = useSelector((state) => state.user.user);
 
 useEffect(() => {
+  // console.log(currentUser);
+  
+  
   if (currentUser) {
     console.log("User already exists:", currentUser);
     return;
   }
-
+  
   const controller = new AbortController();
   const token = localStorage.getItem("token") ? JSON.parse(localStorage.getItem("token")) : null;
-
+  
   if (!token) {
     console.log("No token found, skipping fetch.");
     return;
   }
-
+  
   const fetchUser = async () => {
     try {
       const response = await axios.get("/user/user-now");
-
+      
       dispatch(setUser(response.data.data.user)); 
       console.log("Fetched currentUser:", response.data.data.user);
     } catch (error) {
@@ -44,7 +47,7 @@ useEffect(() => {
   fetchUser();
 
   return () => controller.abort(); // Cleanup function to abort request if unmounted
-}, [currentUser, dispatch]); 
+}, [currentUser, dispatch]);  
 
 
   return (

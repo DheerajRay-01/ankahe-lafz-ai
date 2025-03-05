@@ -80,18 +80,20 @@ function ResponseBox({ res, isGet,setLan,lang }) {
 )}
 
 <button
-onClick={handleSave}
-    className="p-3 rounded-full bg-white/80 hover:bg-white transition-all 
-               duration-300 scale-100 hover:scale-110 shadow-md shadow-gray-400/50 
-               backdrop-blur-md border cursor-pointer border-gray-300
-               flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12"
-  >
-      {saved ? (
-      <MdOutlineBookmarkAdded className="text-green-600" size={30} />
-    ) : (
-      <MdOutlineBookmarkAdd className="text-gray-700" size={30}/>
-    )}
-  </button>
+  onClick={handleSave}
+  className="p-3 rounded-full bg-white/90 hover:bg-white transition-all 
+             duration-300 scale-100 hover:scale-110 shadow-lg shadow-gray-300/60
+             backdrop-blur-md border border-gray-300 cursor-pointer 
+             flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12  
+             focus:ring-2 focus:ring-gray-400/30 active:scale-100"
+>
+  {saved ? (
+    <MdOutlineBookmarkAdded className="text-green-500 transition-all duration-300" size={32} />
+  ) : (
+    <MdOutlineBookmarkAdd className="text-gray-700 transition-all duration-300" size={32} />
+  )}
+</button>
+
 
 
    
