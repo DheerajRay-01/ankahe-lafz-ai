@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 function LanguageSelector({ setLang ,selectedLang}) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
-  const languages = ["Hindi", "English","Hinglish"];
+  const languages = ["Hindi", "English","Hinglish" ];
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -24,7 +24,7 @@ function LanguageSelector({ setLang ,selectedLang}) {
   className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center 
              text-gray-900 bg-white/90 hover:bg-white transition-all duration-300 
              rounded-3xl shadow-md shadow-gray-400/50 border border-gray-300
-             font-semibold text-sm sm:text-base capitalize tracking-wide"
+             font-semibold text-sm sm:text-base capitalize tracking-wide cursor-pointer"
   style={{ 
     fontFamily: "'Gotu', sans-serif",  // Custom font
     letterSpacing: "1px",              // Spaced-out letters

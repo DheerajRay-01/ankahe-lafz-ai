@@ -4,6 +4,8 @@ import ResponseBox from "./ResponseBox";
 import { Send } from "react-feather"; // Using React Icons
 import { GiFeather } from "react-icons/gi";
 import { useDispatch, useSelector } from "react-redux";
+// import LogoutButton from "./LogoutButton";
+import ProfileIcon from "./ProfileIcon";
 
 function ChatScreen() {
     const reduxResponse = useSelector((state) => state.response.response);
@@ -46,7 +48,8 @@ function ChatScreen() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-4 py-6 bg-gradient-to-b from-gray-900 to-gray-800 text-white">
       {/* Title with Berkshire Swash Font */}
-    
+      {/* <LogoutButton/> */}
+      <ProfileIcon/>
       <h1 className="flex gap-4 text-3xl md:text-4xl font-berkshire text-center mb-4 italic tracking-wide text-gray-200">
       <span
   className="name"

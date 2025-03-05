@@ -4,16 +4,19 @@ import { SlOptionsVertical } from "react-icons/sl";
 import LanguageSelector from "./LanguageSelector";
 import { useDispatch } from "react-redux";
 import { addResponse } from "./redux/slices/responseSlice";
+import { MdOutlineBookmarkAdded ,MdOutlineBookmarkAdd} from "react-icons/md";
+import axios from "../axios/axios";
+import { Content } from "../../../backend/src/models/content.model";
 
 function ResponseBox({ res, isGet,setLan,lang }) {
   const dispatch = useDispatch()
   const [copied, setCopied] = useState(false);
-
+  const [saved, setSaved] = useState(false);
+  
 
   useEffect(()=>{
     dispatch(addResponse(" "))
-    // console.log("changed");
-    
+    // console.log("changed"); 
   },[lang])
 
   const handleCopy = () => {
@@ -21,7 +24,21 @@ function ResponseBox({ res, isGet,setLan,lang }) {
     setCopied(true);
     setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
   };
-
+  const handleSave = async () => {
+    setSaved(true); // Indicate that saving has started
+  
+    try {
+      const add = await axios.post("/content/upload", { content: res, language: lang });
+      // console.log("Saved:", add);
+    } catch (error) {
+      console.error("Error saving content:", error);
+    } finally {
+      setTimeout(() => {
+        setSaved(false); // Reset state after 2 seconds
+      }, 2000);
+    }
+  };
+  
   return (
     <div 
       className="relative bg-gradient-to-b from-gray-50 to-gray-100 shadow-xl rounded-2xl p-6 mt-6 
@@ -52,7 +69,7 @@ function ResponseBox({ res, isGet,setLan,lang }) {
     onClick={handleCopy}
     className="p-3 rounded-full bg-white/80 hover:bg-white transition-all 
                duration-300 scale-100 hover:scale-110 shadow-md shadow-gray-400/50 
-               backdrop-blur-md border border-gray-300 
+               backdrop-blur-md border border-gray-300 cursor-pointer
                flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12"
     aria-label="Copy text"
   >
@@ -64,7 +81,22 @@ function ResponseBox({ res, isGet,setLan,lang }) {
   </button>
 )}
 
+<button
+onClick={handleSave}
+    className="p-3 rounded-full bg-white/80 hover:bg-white transition-all 
+               duration-300 scale-100 hover:scale-110 shadow-md shadow-gray-400/50 
+               backdrop-blur-md border cursor-pointer border-gray-300
+               flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12"
+  >
+      {saved ? (
+      <MdOutlineBookmarkAdded className="text-green-600" size={30} />
+    ) : (
+      <MdOutlineBookmarkAdd className="text-gray-700" size={30}/>
+    )}
+  </button>
 
+
+   
   <LanguageSelector setLang={setLan} selectedLang={lang}/>
 
 </div>
