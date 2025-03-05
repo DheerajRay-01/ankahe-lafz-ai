@@ -9,10 +9,11 @@ export default defineConfig({
     strictPort: true,
     proxy: {
       "/api": {
-        target: process.env.VITE_BACKEND_URL ,
+        target: import.meta.env.VITE_BACKEND_URL, // Corrected
         changeOrigin: true,
         secure: false,
       },
     },
+    
   },
 });
