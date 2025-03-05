@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { FaRegCopy, FaCheck } from "react-icons/fa";
-import { SlOptionsVertical } from "react-icons/sl";
 import LanguageSelector from "./LanguageSelector";
 import { useDispatch } from "react-redux";
 import { addResponse } from "./redux/slices/responseSlice";
 import { MdOutlineBookmarkAdded ,MdOutlineBookmarkAdd} from "react-icons/md";
-import axios from "../axios/axios";
+import axios from "../axios/axios.js";
 
 function ResponseBox({ res, isGet,setLan,lang }) {
   const dispatch = useDispatch()
@@ -31,7 +30,7 @@ function ResponseBox({ res, isGet,setLan,lang }) {
       // console.log("Saved:", add);
     } catch (error) {
       console.error("Error saving content:", error);
-    } finally {
+    } finally { 
       setTimeout(() => {
         setSaved(false); // Reset state after 2 seconds
       }, 2000);
@@ -44,7 +43,7 @@ function ResponseBox({ res, isGet,setLan,lang }) {
                  border border-gray-200 mx-auto w-full max-w-3xl transition-all duration-300"
     >
     
-      {/* Response Content */}
+      {/* Response Content */}  
       <div
         className="text-gray-900 leading-loose tracking-wide whitespace-pre-line min-h-[50vh] max-h-[60vh] 
                    overflow-y-auto p-4 md:pr-8 scrollbar-thin scrollbar-thumb-amber-400 scrollbar-track-gray-200 text-lg"
