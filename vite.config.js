@@ -11,8 +11,8 @@ export default defineConfig({
     // port: 5173, // Ensure the correct port is set
     proxy: {
       "/api": {
-        // target: "http://localhost:8000",
-        target: "https://ankahe-lafz-backend.onrender.com",
+        target: "http://localhost:8000",
+        // target: "https://ankahe-lafz-backend.onrender.com",
         changeOrigin: true,
         secure: false,
       },
