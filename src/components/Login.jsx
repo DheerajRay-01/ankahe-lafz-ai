@@ -49,7 +49,9 @@ const Login = () => {
 
       // Extract meaningful error message from response
       const errorMessage =
-        error.response?.data?.message || "An unexpected error occurred.";
+        error.response?.data?.message || "Wrong Credentials";
+        console.log(error);
+        
       setServerError(errorMessage);
     }
   };
