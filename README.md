@@ -5,6 +5,9 @@ Ankahe Lafz is an **AI-powered poetry and shayari generator** that crafts beauti
 
 🌐 **Live Demo:** [Ankahe Lafz](https://ankahe-lafz-ai.vercel.app/)  
 
+🌐 **BAckend Repository:** [Ankahe Lafz](https://github.com/DheerajRay-01/ankahe-lafz-backend)  
+
+
 ## 📌 **Features**  
 
 - ✨ **AI-Powered Poetry** – Generate poetry and shayari based on any word, thought, or prompt.  
