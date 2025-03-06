@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "../axios/axios";
 import SeeSaved from "./SeeSaved";
+import { IoArrowBackCircleOutline } from "react-icons/io5";
+import { useNavigate } from "react-router";
 
 const Saved = () => {
+  const navigate = useNavigate()
   const [data, setData] = useState([]);
   const [seeSavedData, setSeeSavedData] = useState(null);
   const [seeSavedDataOpen, setSeeSavedDataOpen] = useState(false);
@@ -35,6 +38,14 @@ const Saved = () => {
 
   return (
     <div className="min-h-screen bg-gray-950 px-6 py-12">
+<div 
+  className="absolute top-6 left-6 flex items-center gap-2 text-amber-50 cursor-pointer text-xl md:text-2xl transition-all duration-300 hover:text-amber-400"
+  onClick={() => navigate("/")}
+>
+  <IoArrowBackCircleOutline className="text-3xl md:text-4xl hover:scale-110 transition-transform duration-200" />
+  <span className="hidden md:inline">Back</span>
+</div>
+
       <h3 className="text-3xl md:text-4xl font-semibold text-center mb-8 text-gray-200">
         Saved Posts
       </h3>
