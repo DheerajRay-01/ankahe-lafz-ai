@@ -46,16 +46,16 @@ const Saved = () => {
   <span className="hidden md:inline">Back</span>
 </div>
 
-      <h3 className="text-3xl md:text-4xl font-semibold text-center mb-8 text-gray-200">
+      <h3 className="text-3xl md:text-4xl  font-semibold text-center mb-8 text-gray-200">
         Saved Posts
       </h3>
 
       {loading ? ( // <-- Show loading indicator
-        <div className="flex m-auto items-center justify-center h-40 w-96 bg-gray-800 text-gray-300 text-lg font-semibold rounded-xl shadow-md border border-gray-700">
+        <div className="flex m-auto items-center justify-center h-40 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg bg-gray-800 text-gray-300 text-lg font-semibold rounded-xl shadow-md border border-gray-700 p-4 text-center">
           Loading...
         </div>
       ) : data.length === 0 ? (
-        <div className="flex m-auto items-center justify-center h-40 w-96 bg-gray-800 text-gray-300 text-lg font-semibold rounded-xl shadow-md border border-gray-700">
+        <div className="flex m-auto items-center justify-center h-40 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg bg-gray-800 text-gray-300 text-lg font-semibold rounded-xl shadow-md border border-gray-700 p-4 text-center">
           No saved posts yet.
         </div>
       ) : (
