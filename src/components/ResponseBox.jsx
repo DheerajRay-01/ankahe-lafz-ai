@@ -54,8 +54,10 @@ function ResponseBox({ res, isGet,setLan,lang }) {
         }}
         dangerouslySetInnerHTML={{
           __html: isGet
-            ? `<span class="text-gray-500 italic">Writing...</span>` 
-            : res.replace(/\n/g, "<br>"),
+            ? `<span class="text-gray-500 italic">Writing...</span>`
+            : res.trim()
+              ? res.replace(/\n/g, "<br>")
+              : `<span class="text-gray-400 italic">Type a word, a thought, or a memory, and let the poetry flow...</span>`,
         }}
       />
 
