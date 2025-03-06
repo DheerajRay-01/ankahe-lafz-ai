@@ -35,7 +35,7 @@ const Login = () => {
       
       // Fetching current user data after login
       const currentUser = await axios.get("/user/user-now");
-      console.log(currentUser);
+      // console.log("currentUser :",currentUser);
       
       if (currentUser?.data?.data?.user) { 
         dispatch(setUser(currentUser.data.data.user));

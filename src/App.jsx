@@ -4,7 +4,7 @@ import Register from '../src/components/Register.jsx';
 import AuthLayout from './components/AuthLayout.jsx';
 import { Route ,Routes } from 'react-router';
 import { useEffect } from 'react';
-import axios from './axios/axios.js';
+import axios from './axios/axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser } from './components/redux/slices/userSlice.js';
 import Profile from './components/Profile.jsx';
@@ -33,7 +33,9 @@ useEffect(() => {
   
   const fetchUser = async () => {
     try {
+      
       const response = await axios.get("/user/user-now");
+      // console.log("from forntend :",response);
       
       dispatch(setUser(response.data.data.user)); 
       console.log("Fetched currentUser:", response.data.data.user);
