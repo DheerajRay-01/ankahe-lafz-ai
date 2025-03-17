@@ -16,7 +16,7 @@ const Login = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors ,isSubmitting},
   } = useForm();
 
   // Function to handle form submission
@@ -127,9 +127,12 @@ const Login = () => {
           {/* Login Button */}
           <button
             type="submit"
-            className="w-full px-4 py-2 bg-blue-500 cursor-pointer text-white font-semibold rounded-lg hover:bg-blue-600 transition-all duration-300"
+            disabled={isSubmitting}
+            className={`w-full px-4 py-2 font-semibold rounded-lg transition-all duration-300 ${
+              isSubmitting ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 text-white hover:bg-blue-600"
+            }`}
           >
-            Login
+            {isSubmitting ? "Logging in..." : "Login"}
           </button>
         </form>
         
